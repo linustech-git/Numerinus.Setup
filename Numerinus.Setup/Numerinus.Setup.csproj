@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!--
+      UserSecretsId keeps your LicenseKey out of source control.
+      Store the key locally with:
+        dotnet user-secrets set "Numerinus:LicenseKey" "NMFIN-..."
+    -->
+    <UserSecretsId>numerinus-setup-secrets</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Generic host, configuration, and console logging -->
+    <PackageReference Include="Microsoft.Extensions.Hosting"            Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console"    Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      In a real client project replace these two ProjectReferences with NuGet references:
+        <PackageReference Include="Numerinus.Core"    Version="*" />
+        <PackageReference Include="Numerinus.Finance" Version="*" />
+    -->
+    <ProjectReference Include="..\Numerinus.Core\Numerinus.Core.csproj" />
+    <ProjectReference Include="..\Numerinus.Finance\Numerinus.Finance.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- appsettings.json is always copied so the host can find it at runtime -->
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

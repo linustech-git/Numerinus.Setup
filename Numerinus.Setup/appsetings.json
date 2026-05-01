@@ -1,0 +1,71 @@
+{
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Numerinus.Setup — configuration template
+  //
+  // ► SAFE TO COMMIT  — this file contains NO secrets.
+  //
+  // ► LicenseKey      — NEVER put your real key here.
+  //   Store it with dotnet user-secrets (local dev) or an environment variable /
+  //   secret manager (CI / production):
+  //
+  //     dotnet user-secrets set "Numerinus:LicenseKey" "NMFIN-STD-..."
+  //     -- or --
+  //     export Numerinus__LicenseKey=NMFIN-STD-...
+  //
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  "Numerinus": {
+    // Base URL of the Numerinus license API. Do not change unless directed.
+    "ApiBaseUrl": "https://api.numerinus.dev",
+
+    // Your license key — leave blank here and use dotnet user-secrets (see above).
+    "LicenseKey": "",
+
+    // Human-readable label for this machine shown in the Numerinus dashboard.
+    // Defaults to Environment.MachineName when left blank.
+    "MachineLabel": "",
+
+    // Stable alias for container / cloud deployments where the hostname is random.
+    // When set, the alias is SHA-256 hashed and sent as machineAlias.
+    // Example: "prod-api-1"
+    "MachineAlias": "",
+
+    // Minimum seconds to cache a valid license response locally, even if the
+    // server returns a shorter TTL. Default 3600 (1 hour).
+    "MinCacheTtlSeconds": 3600
+  },
+
+  "NumerinusTelemetry": {
+    // Master opt-in switch. Set to true to enable usage telemetry.
+    // Telemetry helps Numerinus improve the library — all data is anonymised.
+    "Enabled": false,
+
+    // Your Numerinus license key is also used to attribute telemetry events.
+    // Leave blank here; sourced from Numerinus:LicenseKey at runtime.
+    "LicenseKey": "",
+
+    // Telemetry endpoint — do not change unless directed.
+    "EndpointUrl": "https://api.numerinus.dev",
+
+    // Number of events to batch before flushing to the endpoint.
+    "BatchSize": 50,
+
+    // Maximum seconds between automatic flushes even if BatchSize is not reached.
+    "FlushIntervalSeconds": 20,
+
+    // Label stamped on every event. Use "Production", "Staging", or "Development".
+    "EnvironmentType": "Development",
+
+    // Enable verbose console output for telemetry (development only — never in prod).
+    "DiagnosticMode": false
+  },
+
+  // Standard .NET logging configuration
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Numerinus": "Information"
+    }
+  }
+}

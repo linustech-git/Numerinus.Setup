@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Numerinus.Setup/.vs/Numerinus.Setup/FileContentIndex
+/Numerinus.Setup/bin/Debug/net10.0
+/Numerinus.Setup/obj
