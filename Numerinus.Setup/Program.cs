@@ -22,10 +22,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Numerinus.Setup;
+using Numerinus.Finance;
 using Numerinus.Core;
 using Numerinus.Core.Telemetry;
-using Numerinus.Finance;
-using Numerinus.Setup;
 
 // ── Build the Generic Host ────────────────────────────────────────────────────
 
@@ -74,7 +74,7 @@ var host = Host.CreateDefaultBuilder(args)
         // use all three.
         services.AddNumerinusFinance();
 
-        // ── 3. Telemetry (opt-in) ─────────────────────────────────────────────
+        // ── 3. Telemetry
         //
         // Telemetry is DISABLED by default (appsettings.json: Enabled = false).
         // To enable, set "NumerinusTelemetry:Enabled": true in appsettings.json

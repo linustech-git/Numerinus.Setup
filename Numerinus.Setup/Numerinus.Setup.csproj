@@ -15,18 +15,12 @@
 
   <ItemGroup>
     <!-- Generic host, configuration, and console logging -->
-    <PackageReference Include="Microsoft.Extensions.Hosting"            Version="9.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console"    Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <!--
-      In a real client project replace these two ProjectReferences with NuGet references:
-        <PackageReference Include="Numerinus.Core"    Version="*" />
-        <PackageReference Include="Numerinus.Finance" Version="*" />
-    -->
-    <ProjectReference Include="..\Numerinus.Core\Numerinus.Core.csproj" />
-    <ProjectReference Include="..\Numerinus.Finance\Numerinus.Finance.csproj" />
+    <PackageReference Include="Numerinus.Finance" Version="1.5.2" />
   </ItemGroup>
 
   <ItemGroup>
